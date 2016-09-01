@@ -49,16 +49,8 @@ public void shouldSubtractTwoValues(){
 @Test
 public void shouldVerifyIfItIsPrimeNumber(){
 	Calculator calculator = new Calculator();
-	boolean result = calculator.isPrimeNumber(13);
+	boolean result = calculator.isPrimeNumber(73);
 	assertThat(result, is(true));
-	
-	
-}
-@Test(expected=PrimeNumberIsZeroException.class)
-public void primeNumberShouldBeNotZero(){
-	Calculator calculator = new Calculator();
-calculator.isPrimeNumber(0);
-	
 	
 	
 }
