@@ -27,7 +27,7 @@ public double subtractTwoValues(int i, int j) {
 }
 
 public boolean isPrimeNumber(int i) {
-	if(i<1){
+	if(i<=1){
 		return false;
 		
 	}

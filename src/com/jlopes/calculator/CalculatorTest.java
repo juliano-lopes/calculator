@@ -47,12 +47,33 @@ public void shouldSubtractTwoValues(){
 }
 
 @Test
-public void shouldVerifyIfItIsPrimeNumber(){
+public void shouldReturnTrueForPrimeNumber(){
 	Calculator calculator = new Calculator();
 	boolean result = calculator.isPrimeNumber(73);
 	assertThat(result, is(true));
 	
 	
 }
+
+@Test
+public void shouldReturnFalseIfNotPrimeNumber(){
+	Calculator calculator = new Calculator();
+	boolean result = calculator.isPrimeNumber(10);
+	assertThat(result, is(false));
+	
+	
+}
+
+@Test
+public void shouldReturnFalseIfNumberLessThanTwo(){
+	Calculator calculator = new Calculator();
+	boolean result = calculator.isPrimeNumber(-7);
+	assertThat(result, is(false));
+	
+	
+}
+
+
+
 }
 
