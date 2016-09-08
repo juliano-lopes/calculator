@@ -1,5 +1,7 @@
 package com.jlopes.calculator;
+
 import static org.hamcrest.core.Is.is;
+
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
@@ -64,6 +66,7 @@ public void shouldReturnFalseIfNotPrimeNumber(){
 	
 }
 
+
 @Test
 public void shouldReturnFalseIfNumberLessThanTwo(){
 	Calculator calculator = new Calculator();
@@ -72,23 +75,32 @@ public void shouldReturnFalseIfNumberLessThanTwo(){
 	
 	
 }
+
 @Test
 public void shouldReturnStringWithNumbersThatFactorizeTheNumberGiven(){
 	Calculator calculator = new Calculator();
 	String result = calculator.refactorize(24);
 	assertThat(result, is("2 2 2 3"));
-	
-	
-	
 }
 @Test
-public void shouldReturnStringWithMessageError(){
+public void shouldReturnEmptyString(){
 	Calculator calculator = new Calculator();
-	String result = calculator.refactorize(200);
-	assertThat(result, is("2 2 2 5 5"));
-	
-	
+	String result = calculator.refactorize(1);
+	assertThat(result, is(""));
 }
+@Test
+public void shouldReturnTheSquareRoot(){
+	Calculator calculator = new Calculator();
+	double result = calculator.squareRoot(25);
+	assertThat(result, is(5.0));
+}
+@Test(expected=SquareRootShouldNotBeNegativeNumberException.class)
+public void dividerShouldNotBeNegativeNumber() throws DividerIsZeroException{
+	Calculator calculator = new Calculator();
+	 calculator.squareRoot(-25);
+
+}
+
 
 
 

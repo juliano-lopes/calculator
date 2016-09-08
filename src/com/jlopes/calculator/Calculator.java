@@ -37,46 +37,44 @@ public class Calculator {
 
 	}
 
-	public String refactorize(int i) {
+	public String refactorize(int numberToFactorize) {
 		String result = "";
-		String resultError = "nao fatoravel";
-		int aux = i;
+		int refNumberToFactorize = numberToFactorize;
 		boolean ready = false;
-		int j = 2;
-		if (i < 2) {
-			return resultError;
+		int counter = 2;
+		if (numberToFactorize < 2) {
+			return "";
 		}
 		while (!ready) {
-
-			if (isPrimeNumber(j)) {
-				if ((aux % j) == 0) {
-					aux /= j;
-					result += j+" ";
+if ((refNumberToFactorize % counter) == 0) {
+					refNumberToFactorize /= counter;
+					result += counter+" ";
 
 				} else {
-					j++;
+					counter++;
 
 				}
 
+if ((refNumberToFactorize == 1) || (counter > numberToFactorize)) {
+ready = true;
 			}
-
-			if ((aux == 1) || (j > i)) {
-
-				ready = true;
-			}
-
-		}
-		if (aux == 1) {
+}
+		if (refNumberToFactorize == 1) {
 			return result.trim();
-
+}
+		else{
+return "";
 		}
-		if (j > i) {
+}
 
-			return resultError;
-
+	public double squareRoot(int numberToSquareRoot) {
+		if(numberToSquareRoot<0){
+			throw new SquareRootShouldNotBeNegativeNumberException();
 		}
-
-		return "";
+		double result = Math.sqrt(numberToSquareRoot);
+		
+		
+		return result;
 	}
 
 }
