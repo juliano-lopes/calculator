@@ -77,4 +77,9 @@ return "";
 		return result;
 	}
 
+	public double power(int base, int exponent) {
+double result = Math.pow(base, exponent);
+		return result;
+	}
+
 }

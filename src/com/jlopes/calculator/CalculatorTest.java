@@ -100,7 +100,13 @@ public void dividerShouldNotBeNegativeNumber() throws DividerIsZeroException{
 	 calculator.squareRoot(-25);
 
 }
-
+@Test
+public void shouldReturnProductNumberToThePowerOf(){
+	Calculator calculator = new Calculator();
+	double result = calculator.power(5,2);
+	assertThat(result, is(25.0));
+	
+}
 
 
 
