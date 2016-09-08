@@ -72,6 +72,24 @@ public void shouldReturnFalseIfNumberLessThanTwo(){
 	
 	
 }
+@Test
+public void shouldReturnStringWithNumbersThatFactorizeTheNumberGiven(){
+	Calculator calculator = new Calculator();
+	String result = calculator.refactorize(24);
+	assertThat(result, is("2 2 2 3"));
+	
+	
+	
+}
+@Test
+public void shouldReturnStringWithMessageError(){
+	Calculator calculator = new Calculator();
+	String result = calculator.refactorize(200);
+	assertThat(result, is("2 2 2 5 5"));
+	
+	
+}
+
 
 
 
