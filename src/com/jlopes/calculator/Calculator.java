@@ -36,7 +36,7 @@ public class Calculator {
 		boolean ready = false;
 		int counter = 2;
 		if (numberToFactorize < 2) {
-			return "";
+			throw new NumberToFactorizeShouldNotBeLessThanTwoException();
 		}
 		while (!ready) {
 			if (remainderAfterDivisionIsZero(refNumberToFactorize, counter)) {
@@ -45,15 +45,11 @@ public class Calculator {
 			} else {
 				counter++;
 			}
-			if ((refNumberToFactorize == 1) || (counter > numberToFactorize)) {
+			if (refNumberToFactorize == 1){
 				ready = true;
 			}
 		}
-		if (refNumberToFactorize == 1) {
-			return result.trim();
-		} else {
-			return "";
-		}
+		return result.trim();
 	}
 
 	public double squareRoot(int numberToSquareRoot) {
@@ -67,7 +63,7 @@ public class Calculator {
 		return Math.pow(base, exponent);
 	}
 
-	private boolean remainderAfterDivisionIsZero(int numberToBeDivided,
+	boolean remainderAfterDivisionIsZero(int numberToBeDivided,
 			int divider) {
 		if ((numberToBeDivided % divider) == 0) {
 			return true;
