@@ -2,39 +2,32 @@ package com.jlopes.calculator;
 
 public class Calculator {
 
-	public double add(int i, int j) {
-
-		return i + j;
+	public double addition(int number1, int number2) {
+		return number1 + number2;
 	}
 
-	public double divide(int i, int j) throws DividerIsZeroException {
-
-		if (j == 0) {
+	public double divide(int numberToBeDivided, int divider)
+			throws DividerIsZeroException {
+		if (divider == 0) {
 			throw new DividerIsZeroException();
-
 		}
-
-		return i / j;
+		return numberToBeDivided / divider;
 	}
 
-	public double subtractTwoValues(int i, int j) {
-
-		return i - j;
+	public double subtractTwoValues(int number1, int number2) {
+		return number1 - number2;
 	}
 
-	public boolean isPrimeNumber(int i) {
-		if (i <= 1) {
+	public boolean isPrimeNumber(int number) {
+		if (number <= 1) {
 			return false;
-
 		}
-		for (int j = 2; j < i; j++) {
-			if ((i % j) == 0) {
-
+		for (int counter = 2; counter < number; counter++) {
+			if ((number % counter) == 0) {
 				return false;
 			}
 		}
 		return true;
-
 	}
 
 	public String refactorize(int numberToFactorize) {
@@ -46,40 +39,32 @@ public class Calculator {
 			return "";
 		}
 		while (!ready) {
-if ((refNumberToFactorize % counter) == 0) {
-					refNumberToFactorize /= counter;
-					result += counter+" ";
-
-				} else {
-					counter++;
-
-				}
-
-if ((refNumberToFactorize == 1) || (counter > numberToFactorize)) {
-ready = true;
+			if ((refNumberToFactorize % counter) == 0) {
+				refNumberToFactorize /= counter;
+				result += counter + " ";
+			} else {
+				counter++;
 			}
-}
+			if ((refNumberToFactorize == 1) || (counter > numberToFactorize)) {
+				ready = true;
+			}
+		}
 		if (refNumberToFactorize == 1) {
 			return result.trim();
-}
-		else{
-return "";
+		} else {
+			return "";
 		}
-}
+	}
 
 	public double squareRoot(int numberToSquareRoot) {
-		if(numberToSquareRoot<0){
+		if (numberToSquareRoot < 0) {
 			throw new SquareRootShouldNotBeNegativeNumberException();
 		}
-		double result = Math.sqrt(numberToSquareRoot);
-		
-		
-		return result;
+		return Math.sqrt(numberToSquareRoot);
 	}
 
 	public double power(int base, int exponent) {
-double result = Math.pow(base, exponent);
-		return result;
+		return Math.pow(base, exponent);
 	}
 
 }
