@@ -23,7 +23,7 @@ public class Calculator {
 			return false;
 		}
 		for (int counter = 2; counter < number; counter++) {
-			if ((number % counter) == 0) {
+			if (remainderAfterDivisionIsZero(number, counter)) {
 				return false;
 			}
 		}
@@ -39,7 +39,7 @@ public class Calculator {
 			return "";
 		}
 		while (!ready) {
-			if ((refNumberToFactorize % counter) == 0) {
+			if (remainderAfterDivisionIsZero(refNumberToFactorize, counter)) {
 				refNumberToFactorize /= counter;
 				result += counter + " ";
 			} else {
@@ -65,6 +65,16 @@ public class Calculator {
 
 	public double power(int base, int exponent) {
 		return Math.pow(base, exponent);
+	}
+
+	private boolean remainderAfterDivisionIsZero(int numberToBeDivided,
+			int divider) {
+		if ((numberToBeDivided % divider) == 0) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 }

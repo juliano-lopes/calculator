@@ -22,7 +22,7 @@ public class CalculatorTest {
 @Test
 public void shouldSumTwoValues(){
 	Calculator calculator = new Calculator();
-	 double result = calculator.add(5,2);
+	 double result = calculator.addition(5,2);
 	 assertThat(result, is(7.0));
 }
 
